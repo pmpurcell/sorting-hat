@@ -39,9 +39,7 @@ const sortingHat = () => {
 
 const button = () => {
   document.querySelector(`body`).addEventListener("click", buttonControl);
-  document
-    .querySelector(`#hogwartsStudents`)
-    .addEventListener("click", expelStudents);
+  document.querySelector(`#hogwartsStudents`).addEventListener("click", expelStudents);
 };
 
 const buttonControl = (event) => {
@@ -49,24 +47,53 @@ const buttonControl = (event) => {
   if (event.target.id === "startButton") {
     console.log("Sorted!");
     let domString = `
-     <form>
+     <form id="studentNameForm">
      <div class="mb-3">
        <label for="studentName" class="form-label">Student Name</label>
-       <input type="text" class="form-control" id="studentName" required>
+       <input type="text" placeholder="Enter your name here." class="form-control" id="studentName">
      </div>
-     <button type="submit" class="btn btn-primary">Submit</button>
+     <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
      </form>
      `;
 
     renderToDom("#studentForm", domString);
   }
 
-  if (event.target.type === "submit") {
-    event.preventDefault();
-    console.log(newStudents);
-    sortStudents();
-  }
+
+  if (event.target.id === "submitButton" && event.target.type === "submit") {
+
+    const nameofStudent = document.getElementById("studentName").value;
+    console.log(nameofStudent);
+      if (nameofStudent === "") {
+        console.log("Empty!")
+        makeHowler();
+      } else {
+
+        event.preventDefault();
+        sortStudents();
+
+      }
+
+
+    document.querySelector("form").reset();
+}
 };
+
+const makeHowler = () => {
+  let domString = `
+
+  <div class="howler">
+  <img src="https://static.wikia.nocookie.net/harrypotter/images/e/e4/Howler.png" alt-text="howler">
+  <h2>"You must enter your name!"</h2>
+  </div>
+
+  `
+  renderToDom("#howlerDiv", domString)
+}
+
+// const handleFormSubmit = () => {
+    
+// }
 
 // Renders student cards to page
 
@@ -200,8 +227,6 @@ const init = () => {
   button();
   placeStudents(newStudents);
   sortDeathEaters(deathEaters);
-//   buttonControl();
-//   sortStudents();
 };
 
 init();

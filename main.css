@@ -9,6 +9,12 @@ body {
     font-family: 'Dancing Script', cursive;
 }
 
+.howler {
+    background: maroon;
+    border: 4px solid black;
+    color: silver;
+}
+
 #hogwartsStudents {
     display: flex;
 }
