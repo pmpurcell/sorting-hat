@@ -79,16 +79,24 @@ const buttonControl = (event) => {
 }
 };
 
-const makeHowler = () => {
+const makeHowler = () => {{
   let domString = `
 
   <div class="howler">
   <img src="https://static.wikia.nocookie.net/harrypotter/images/e/e4/Howler.png" alt-text="howler">
-  <h2>"You must enter your name!"</h2>
+  <h6>"You must enter your name!"</h6>
   </div>
 
   `
   renderToDom("#howlerDiv", domString)
+}
+
+  const clearHowler = () => {
+    let domString = ` `
+    renderToDom("#howlerDiv", domString)
+  };
+  setTimeout(clearHowler,3 * 1000)
+
 }
 
 // const handleFormSubmit = () => {
