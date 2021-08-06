@@ -13,6 +13,13 @@ body {
     background: maroon;
     border: 4px solid black;
     color: silver;
+    /* max-height: 200px; */
+    max-width: 200px;
+}
+
+.howler img {
+    max-height: 50%;
+    max-width: 50%;
 }
 
 #hogwartsStudents {
