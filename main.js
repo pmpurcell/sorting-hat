@@ -39,11 +39,13 @@ const sortingHat = () => {
 
 const button = () => {
   document.querySelector(`body`).addEventListener("click", buttonControl);
-  document.querySelector(`#hogwartsStudents`).addEventListener("click", expelStudents);
+  document
+    .querySelector(`#hogwartsStudents`)
+    .addEventListener("click", expelStudents);
 };
 
 const buttonControl = (event) => {
-//   console.log("The button works?");
+  //   console.log("The button works?");
   if (event.target.id === "startButton") {
     console.log("Sorted!");
     let domString = `
@@ -59,48 +61,43 @@ const buttonControl = (event) => {
     renderToDom("#studentForm", domString);
   }
 
-
   if (event.target.id === "submitButton" && event.target.type === "submit") {
-
     const nameofStudent = document.getElementById("studentName").value;
     console.log(nameofStudent);
-      if (nameofStudent === "") {
-        console.log("Empty!")
-        makeHowler();
-      } else {
-
-        event.preventDefault();
-        sortStudents();
-
-      }
-
+    if (nameofStudent === "") {
+      console.log("Empty!");
+      makeHowler();
+    } else {
+      event.preventDefault();
+      sortStudents();
+    }
 
     document.querySelector("form").reset();
-}
+  }
 };
 
-const makeHowler = () => {{
-  let domString = `
+const makeHowler = () => {
+  {
+    let domString = `
 
   <div class="howler">
   <img src="https://static.wikia.nocookie.net/harrypotter/images/e/e4/Howler.png" alt-text="howler">
   <h6>"You must enter your name!"</h6>
   </div>
 
-  `
-  renderToDom("#howlerDiv", domString)
-}
+  `;
+    renderToDom("#howlerDiv", domString);
+  }
 
   const clearHowler = () => {
-    let domString = ` `
-    renderToDom("#howlerDiv", domString)
+    let domString = ` `;
+    renderToDom("#howlerDiv", domString);
   };
-  setTimeout(clearHowler,3 * 1000)
-
-}
+  setTimeout(clearHowler, 3 * 1000);
+};
 
 // const handleFormSubmit = () => {
-    
+
 // }
 
 // Renders student cards to page
@@ -121,8 +118,6 @@ const placeStudents = (array) => {
             </div>
         </div>
 `;
-
-
   });
 
   renderToDom("#hogwartsStudents", domString);
@@ -140,7 +135,6 @@ const expelStudents = (event) => {
 
     const expelledStudent = newStudents.splice(targetId, 1);
 
-
     deathEaters.push(expelledStudent[0]);
 
     console.log(deathEaters);
@@ -149,7 +143,6 @@ const expelStudents = (event) => {
     sortDeathEaters(deathEaters);
     placeStudents(newStudents);
   }
-
 };
 
 // Prints Death Eaters
