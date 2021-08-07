@@ -2,6 +2,10 @@
 
 Use this app to sort your friends in you into the four magical houses of Hogwarts! If someone makes you mad, you can expel them and send them over to Voldemort's Army!
 
+## App
+
+[Click here to view the app](https://pmp-sorting-hat.netlify.app/)
+
 ## Get started
 git clone git@github.com:pmpurcell/sorting-hat.git
 
@@ -15,7 +19,7 @@ Randomizer: Entering a student name will randomly assign it one of four houses.
 Expel: Clicking the "Expel" button on a card with remove that student and add them to Voldemort's Army
 
 ## Relevant Links
-Netlify
+[Netlify](https://pmp-sorting-hat.netlify.app/)
 [Project Board](https://github.com/pmpurcell/sorting-hat/projects/1)
 
 ## Wireframes
