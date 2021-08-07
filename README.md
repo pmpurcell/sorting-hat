@@ -1,4 +1,4 @@
-# Sorting Hat
+# Sorting Hat [![Netlify Status](https://api.netlify.com/api/v1/badges/7251f057-6756-415e-9761-317eb7bbab08/deploy-status)](https://app.netlify.com/sites/pmp-sorting-hat/deploys)
 
 Use this app to sort your friends in you into the four magical houses of Hogwarts! If someone makes you mad, you can expel them and send them over to Voldemort's Army!
 
