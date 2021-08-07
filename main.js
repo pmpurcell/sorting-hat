@@ -1,17 +1,8 @@
 // Student Arrays
 
-const newStudents = [
-  //     {
-  //     name: "Harry Potter",
-  //     house: "Gryffindor",
-  // },
-];
+const newStudents = [];
 
-const deathEaters = [
-  // {
-  // name: "Peter Pettigrew",
-  // },
-];
+const deathEaters = [];
 
 // Render to Dom
 
@@ -45,9 +36,7 @@ const button = () => {
 };
 
 const buttonControl = (event) => {
-  //   console.log("The button works?");
   if (event.target.id === "startButton") {
-    console.log("Sorted!");
     let domString = `
      <form id="studentNameForm">
      <div class="mb-3">
@@ -63,9 +52,7 @@ const buttonControl = (event) => {
 
   if (event.target.id === "submitButton" && event.target.type === "submit") {
     const nameofStudent = document.getElementById("studentName").value;
-    console.log(nameofStudent);
     if (nameofStudent === "") {
-      console.log("Empty!");
       makeHowler();
     } else {
       event.preventDefault();
@@ -96,15 +83,9 @@ const makeHowler = () => {
   setTimeout(clearHowler, 3 * 1000);
 };
 
-// const handleFormSubmit = () => {
-
-// }
-
 // Renders student cards to page
 
 const placeStudents = (array) => {
-  console.log(array, "Inside placeStudents function");
-
   let domString = " ";
 
   array.forEach((student, i) => {
@@ -131,14 +112,10 @@ const expelStudents = (event) => {
 
   if (targetType === "button") {
     event.preventDefault();
-    console.log("Expelled!");
 
     const expelledStudent = newStudents.splice(targetId, 1);
 
     deathEaters.push(expelledStudent[0]);
-
-    console.log(deathEaters);
-    console.log(newStudents);
 
     sortDeathEaters(deathEaters);
     placeStudents(newStudents);
@@ -172,8 +149,6 @@ const sortStudents = () => {
     return Math.floor(Math.random() * 4) + 1;
   };
 
-  console.log(randomNumber());
-
   const studentHouse = randomNumber();
 
   if (studentHouse === 1) {
@@ -183,7 +158,6 @@ const sortStudents = () => {
       crest: `https://static.wikia.nocookie.net/pottermore/images/1/16/Gryffindor_crest.png`,
       style: "grif-style",
     };
-    console.log(student);
     newStudents.push(student);
   }
   if (studentHouse === 2) {
@@ -193,7 +167,6 @@ const sortStudents = () => {
       crest: `https://static.wikia.nocookie.net/pottermore/images/5/5e/Hufflepuff_crest.png`,
       style: "huff-style",
     };
-    console.log(student);
     newStudents.push(student);
   }
   if (studentHouse === 3) {
@@ -203,7 +176,6 @@ const sortStudents = () => {
       crest: `https://static.wikia.nocookie.net/pottermore/images/4/4f/Ravenclaw_crest.png`,
       style: "rave-style",
     };
-    console.log(student);
     newStudents.push(student);
   }
   if (studentHouse === 4) {
@@ -213,7 +185,6 @@ const sortStudents = () => {
       crest: `https://static.wikia.nocookie.net/pottermore/images/4/45/Slytherin_Crest.png`,
       style: "sly-style",
     };
-    console.log(student);
     newStudents.push(student);
   }
 
@@ -223,7 +194,6 @@ const sortStudents = () => {
 // Initializes App
 
 const init = () => {
-  console.log("Init function running");
   sortingHat();
   button();
   placeStudents(newStudents);
