@@ -7,9 +7,10 @@ Use this app to sort your friends in you into the four magical houses of Hogwart
 [Click here to view the app](https://pmp-sorting-hat.netlify.app/)
 
 ## Get started
+```
 git clone git@github.com:pmpurcell/sorting-hat.git
-
 cd sorting-hat
+````
 
 ## The User
 This app is useful for randomly sorting groups in a fun way!
